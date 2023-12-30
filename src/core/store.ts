@@ -1,7 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import alertDialog from './slices/alertDialogSlice';
+import modal from './slices/modalSlice';
+
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    alertDialog,
+    modal,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

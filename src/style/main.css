@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #e7e7e7;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #cacaca;
+  border-radius: 8px;
+}
+
+/* For Firefox */
+/* Style the scrollbar width and track color */
+*:not(::-webkit-scrollbar) {
+  scrollbar-width: thin;
+  scrollbar-color: #cacaca #e7e7e7;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
