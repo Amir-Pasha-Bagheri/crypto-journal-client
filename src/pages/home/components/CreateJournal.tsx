@@ -2,6 +2,7 @@ import { Grid, InputAdornment } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import FormDatePicker from 'shared-component/form-fields/FormDatePicker';
 import FormNumericTextField from 'shared-component/form-fields/FormNumericTextField';
+import FormSelectBox from 'shared-component/form-fields/FormSelectBox';
 import FormTextField from 'shared-component/form-fields/FormTextField';
 
 interface CreateJournalForm {
@@ -74,19 +75,35 @@ export default function CreateJournal() {
       </Grid>
 
       <Grid item xs={12} sm={6} md={4} lg={3}>
-        <FormTextField label="Strategy" name="strategy" control={control} />
+        <FormSelectBox
+          label="Strategy"
+          name="strategy"
+          control={control}
+          options={[
+            {
+              label: 'Strategy A',
+              value: 'A',
+            },
+            {
+              label: 'Strategy B',
+              value: 'B',
+            },
+            {
+              label: 'Strategy C',
+              value: 'C',
+            },
+          ]}
+        />
       </Grid>
 
       <Grid item xs={12} sm={6} md={4} lg={3}>
-        <FormTextField label="Analysis" name="analysis" control={control} />
+        <FormTextField label="Analysis" name="analysis" control={control} multiline rows={3} />
       </Grid>
+
+      <br />
 
       <Grid item xs={12} sm={6} md={4} lg={3}>
         <FormNumericTextField label="Gain" name="gain" control={control} />
-      </Grid>
-
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <FormTextField label="Description" name="description" control={control} />
       </Grid>
 
       <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -95,6 +112,16 @@ export default function CreateJournal() {
 
       <Grid item xs={12} sm={6} md={4} lg={3}>
         <FormDatePicker label="End Date" name="endDate" control={control} />
+      </Grid>
+
+      <Grid item xs={12} sm={6} md={4} lg={3}>
+        <FormTextField
+          label="Description"
+          name="description"
+          control={control}
+          multiline
+          rows={3}
+        />
       </Grid>
     </Grid>
   );
