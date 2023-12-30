@@ -196,7 +196,7 @@ const ModalComponent: FC<ModalComponentProps> = ({
               </StyledIconButton>
             )}
             {title && <DialogTitle>{title}</DialogTitle>}
-            <DialogContent>{body}</DialogContent>
+            <DialogContent className="!pt-2">{body}</DialogContent>
           </>
         )}
       </React.Suspense>
